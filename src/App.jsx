@@ -13,6 +13,8 @@ function App() {
   const [responseMessage, setResponseMessage] = useState('');
   const [error, setError] = useState('');
 
+  const [user, setUser] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -57,12 +59,34 @@ function App() {
     });
   };
 
+  const handleCheck = async () => {
+    try {
+    const response = await fetch('http://localhost:3008/customers/check-session', {
+      method: 'GET',
+      credentials: 'include'
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.isAuthenticated) {
+      setUser(data.user);
+    } else {
+      setUser(null);
+    }
+  } catch (err) {
+    console.error('Auth error:', err);
+    setUser(null);
+  }
+  }
+
   return (
     <>
       <h1>Welcome to client demo!</h1>
       
       {responseMessage && <div className="success-message">{responseMessage}</div>}
       {error && <div className="error-message">{error}</div>}
+      <button onClick={handleCheck}>Check session</button>
+      {user && <div className="user-info">User: {user.name}</div>}
       
       <form onSubmit={handleSubmit}>
         <label>Name</label>
