@@ -1,0 +1,102 @@
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6) 0%,
+      /* Negro muy oscuro en el centro */ rgba(0, 0, 0, 0.9) 100%
+        /* Negro casi puro en los bordes */
+    ),
+    url('/backgrounds/hero.avif') center/cover fixed no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  height: 90dvh;
+  color: white; /* Texto en blanco para contraste */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para legibilidad */
+
+  .hero__newMenu {
+    padding: 8px;
+    width: 140px;
+    background-color: #dc2626;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 550;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 3em;
+
+    span {
+      color: #ef4444;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #e8e7e6;
+  }
+
+  .hero__buttons {
+    margin-top: 40px;
+    display: grid;
+    gap: 10px;
+
+    a {
+      text-align: center;
+      padding: 1em;
+      border-radius: 10px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-weight: 550;
+    }
+
+    .firstButton {
+      background-color: #dc2626;
+    }
+    .firstButton:hover {
+      background-color: #b91c1c;
+    }
+    .secondButton {
+      background: rgba(255, 255, 255, 0.038); /* Fondo semi-transparente */
+      backdrop-filter: blur(5px); /* Efecto blur sobre el fondo padre */
+      border: 1px solid rgba(255, 255, 255, 0.585); /* Borde sutil */
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    /* Efecto hover para interactividad */
+    .secondButton:hover {
+      background: rgba(255, 255, 255, 0.171);
+      backdrop-filter: blur(12px);
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .hero {
+    .hero__buttons {
+      width: 500px;
+
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+
+@media (min-width: 850px) {
+    .hero{
+        padding-left: 100px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .hero{
+        padding-left: 200px;
+    }
+}
