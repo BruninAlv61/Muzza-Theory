@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  height: 90dvh;
+  height: 80dvh;
   color: white; /* Texto en blanco para contraste */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para legibilidad */
 
