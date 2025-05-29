@@ -3,6 +3,7 @@ import { Nav } from './components/Nav.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Cards } from './components/Cards.jsx'
 import { PediOnline } from './components/PediOnline.jsx'
+import { ComboOffers } from './components/ComboOffers.jsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="main">
         <Cards />
         <PediOnline />
+        <ComboOffers />
       </main>
     </>
   )
